@@ -1,0 +1,11 @@
+<p>directives works!</p>
+<button class="btn btn-primary"
+(click)="onCreateDetails()">
+Display Details
+</button>
+<p *ngIf="detailsCreated; else noDetails"
+>Secret Password created{{ secretPassword }}</p>
+<ng-template #noDetails><p>No details!</p></ng-template>
+<div *ngFor="let log of logs; let i=index"
+[ngClass] = "{'password' : log>=5}"
+[ngStyle] = "{backgroundColor:log >= 5?'blue':'white'}">{{ log }}</div>
